@@ -1,1 +1,25 @@
+Car Auction System
+A web-based car auction platform that allows users to buy and sell cars through bidding. This system enables sellers to list their vehicles with images and details, while buyers can place bids in real-time. Built with a user-friendly interface, the system supports user authentication, bidding logic, auction deadlines, and admin control for managing listings and users.
 
+🔧 Tech Stack:
+Frontend: HTML, CSS, Bootstrap, JavaScript
+
+Backend: Python, Django
+
+Database: SQLite
+
+Authentication: Django Auth System
+
+✨ Features:
+User registration & login
+
+Post car listings with images and descriptions
+
+Real-time bidding functionality
+
+Auction countdown timer
+
+Admin dashboard for managing listings and users
+
+📦 Use Case:
+Perfect for individuals or dealers looking to auction their cars online in a secure and dynamic environment.
