@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Car Detail{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="text-center">{{ car.title }}</h1>
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <img src="{{ car.image.url }}" class="img-fluid mb-3 border rounded" alt="{{ car.title }}">
+        </div> 
+        <div class="col-md-6">
+            <p><strong>Description:</strong> {{ car.description }}</p>
+            <p><strong>Starting Bid:</strong> ${{ car.starting_bid }}</p>
+            <p><strong>Auction Ends:</strong> {{ car.end_auction }}</p>
+            
+            <!-- Display the winner if the auction has ended -->
+            {% if not auction_active and winner %}
+            <p class="text-success mt-3">
+                <strong>Winner:</strong> {{ winner.username }}
+            </p>
+            {% endif %}
+            
+            <!-- Timer -->
+            {% if auction_active %}
+            <div id="timer" class="alert alert-info mt-3" role="alert">
+                Auction ends in: <span id="time-remaining"></span>
+            </div>
+            {% else %}
+            <p class="text-danger mt-4"><strong>The auction has ended.</strong></p>
+            {% endif %}
+
+            <!-- Error Message -->
+            {% if error_message %}
+            <div class="alert alert-warning mt-3" role="alert">
+                {{ error_message }}
+            </div>
+            {% endif %}
+
+            <!-- Bidding Form -->
+            {% if auction_active %}
+            <h3 class="mt-4">Place a Bid</h3>
+            <form method="POST" action="{% url 'car_detail' car.id %}">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="amount" class="form-label">Your Bid</label>
+                    <input type="number" class="form-control" id="amount" name="amount" r
