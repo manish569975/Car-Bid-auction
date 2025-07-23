@@ -15,6 +15,15 @@ A Django-based web application that allows users to participate in car auctions 
 
 ---
 
+## 🔧 Features
+
+- 🔍 **Browse Car Listings**: View all available cars up for auction with details and images.
+- 💰 **Place Bids**: Authenticated users can place bids on active auctions.
+- 📋 **Manage Listings**: Sellers can list their own vehicles, edit details, and track bids.
+- 👤 **User Authentication**: Secure login and registration system for buyers and sellers.
+- 📊 **Bid History & Status**: Track bid history and auction status in real-time.
+
+
 ## 📂 Project Structure
 
 ```plaintext
